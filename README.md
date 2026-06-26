@@ -1,0 +1,113 @@
+# Lie's Theorem: A Structural Approach to Solvable Lie Algebras
+
+This repository contains an expository manuscript on Lie's Theorem for finite-dimensional representations of solvable Lie algebras over an algebraically closed field of characteristic zero.
+
+The manuscript is:
+
+- **Title:** *Lie's Theorem: A Structural Approach to Solvable Lie Algebras*
+- **Author:** Xi Chen
+- **Date:** 11 November 2025
+- **File:** [`documents/math3349_project.pdf`](documents/math3349_project.pdf)
+
+## Abstract
+
+Lie's Theorem asserts that if \( \mathfrak g \) is a finite-dimensional solvable Lie algebra over an algebraically closed field \( k \) of characteristic zero, and if
+\[
+\rho:\mathfrak g \to \mathfrak{gl}(V)
+\]
+is a finite-dimensional representation, then \( V \) admits a complete \( \mathfrak g \)-stable flag. Equivalently, there exists a basis of \( V \) in which every operator \( \rho(x) \), for \( x \in \mathfrak g \), is upper triangular.
+
+The paper gives a detailed structural proof of this theorem. It develops the necessary language of ideals, derived series, stable subspaces, quotient representations, and complete flags before proving the theorem through the construction of a common eigenvector and an induction on the dimension of the representation space.
+
+## Provenance and Expository Contribution
+
+The proof is based principally on Jean-Pierre Serre's presentation in:
+
+> Jean-Pierre Serre, *Lie Algebras and Lie Groups: 1964 Harvard Lectures*, Benjamin, 1965.
+
+The purpose of this manuscript is not to claim a new theorem, but to provide a careful reconstruction and pedagogical expansion of Serre's proof. In particular, the manuscript reorganizes the original argument into a step-by-step exposition and fills in several intermediate steps that are compressed or left implicit in Serre's text. The resulting presentation is intended to be readable for beginners who want to understand the proof deeply, while preserving the logical precision of the classical argument.
+
+The main expository contributions are:
+
+- isolating the reduction of Lie's Theorem to the existence of a common eigenvector;
+- making explicit the use of a codimension-one ideal in a solvable Lie algebra;
+- expanding the proof of the main character lemma, including the cyclic subspace construction and trace argument;
+- carefully explaining how the common eigenvector produces a stable line and how the quotient representation supports the induction;
+- recording the role of the field hypotheses, especially algebraic closedness and characteristic zero;
+- including examples and counterexamples that clarify the necessity of the assumptions.
+
+## Mathematical Structure
+
+The manuscript is organized as follows.
+
+1. **Introduction.** Motivation for Lie's Theorem and its role in the structure theory of solvable Lie algebras.
+2. **Basics of Lie Algebras.** Definitions of Lie algebras, ideals, derived series, representations, stable subspaces, quotient representations, complete flags, and the adjoint representation.
+3. **Structural Tools for Lie's Theorem.** Proof that a nonzero solvable Lie algebra has a codimension-one ideal containing its derived algebra, together with supporting facts about common eigenvectors and abelian actions.
+4. **Lie's Theorem.** The main proof, including the reduction to a common eigenvector, the main lemma on characters over ideals, and the induction that constructs a complete stable flag.
+5. **Examples, Field Assumptions, and Limitations.** Positive examples over \( \mathbb C \), failure over non-algebraically closed fields, and failure in positive characteristic.
+6. **References.** Sources used in the exposition.
+7. **Appendix.** Note on the use of generative AI in preparing parts of the project.
+
+## Main Theorem
+
+Let \( k \) be an algebraically closed field of characteristic zero, let \( \mathfrak g \) be a solvable Lie algebra over \( k \), and let \( \rho:\mathfrak g \to \mathfrak{gl}(V) \) be a finite-dimensional representation. Then there exists a complete \( \mathfrak g \)-stable flag
+\[
+0 = V_0 \subset V_1 \subset \cdots \subset V_n = V,
+\qquad \dim(V_i/V_{i-1}) = 1.
+\]
+Equivalently, there is a basis of \( V \) in which every \( \rho(x) \), \( x \in \mathfrak g \), is upper triangular.
+
+## Key Proof Strategy
+
+The proof proceeds by reducing the theorem to the existence of a common eigenvector. Once such a vector \( v \neq 0 \) is found, the line \( kv \) is \( \mathfrak g \)-stable. The representation then descends to the quotient \( V/kv \), and induction gives a complete stable flag in the quotient. Pulling this flag back to \( V \) yields the desired complete \( \mathfrak g \)-stable flag.
+
+The central technical point is the following lemma. If \( \mathfrak h \triangleleft \mathfrak g \) is an ideal and \( v \neq 0 \) is an \( \mathfrak h \)-eigenvector with character \( \chi:\mathfrak h \to k \), then
+\[
+\chi([x,h]) = 0
+\qquad
+\text{for all } x \in \mathfrak g,\ h \in \mathfrak h.
+\]
+This lemma is proved by constructing a finite cyclic subspace generated by repeated applications of \( \rho(x) \), showing that \( \rho(h) \) acts upper triangularly on it with constant diagonal character \( \chi(h) \), and then applying the trace identity \( \operatorname{Tr}([A,B])=0 \). The characteristic-zero assumption is essential at precisely this point.
+
+## Field Hypotheses
+
+The assumptions on the base field are not cosmetic.
+
+- Algebraic closedness is used to guarantee the existence of eigenvectors for linear operators on nonzero finite-dimensional invariant subspaces.
+- Characteristic zero is used in the trace argument, where one concludes from \( n\chi([x,h])=0 \) that \( \chi([x,h])=0 \).
+
+The manuscript includes counterexamples showing that Lie's Theorem can fail over \( \mathbb R \) and in positive characteristic.
+
+## Repository Contents
+
+```text
+.
+├── README.md
+├── CITATION.cff
+└── documents
+    └── math3349_project.pdf
+```
+
+## Suggested Citation
+
+If citing this exposition, please cite both the manuscript and Serre's original source.
+
+```bibtex
+@misc{chen_lies_theorem_structural_2025,
+  author = {Chen, Xi},
+  title = {Lie's Theorem: A Structural Approach to Solvable Lie Algebras},
+  year = {2025},
+  note = {Expository manuscript based on Serre's 1964 Harvard Lectures, with expanded intermediate steps and a beginner-oriented reconstruction of the proof.}
+}
+
+@book{serre_lie_algebras_1965,
+  author = {Serre, Jean-Pierre},
+  title = {Lie Algebras and Lie Groups: 1964 Harvard Lectures},
+  publisher = {Benjamin},
+  year = {1965}
+}
+```
+
+## License
+
+No open-source license is currently specified. Unless a license is added, all rights are reserved by the author.

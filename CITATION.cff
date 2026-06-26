@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this exposition, please cite it together with Serre's original source."
+title: "Lie's Theorem: A Structural Approach to Solvable Lie Algebras"
+authors:
+  - family-names: "Chen"
+    given-names: "Xi"
+date-released: "2025-11-11"
+type: report
+abstract: "A step-by-step expository reconstruction of Lie's Theorem for solvable Lie algebras, based on Serre's 1964 Harvard Lectures and expanded to fill in intermediate proof details for readers learning the argument."
+preferred-citation:
+  type: report
+  title: "Lie's Theorem: A Structural Approach to Solvable Lie Algebras"
+  authors:
+    - family-names: "Chen"
+      given-names: "Xi"
+  date-released: "2025-11-11"
+  notes: "Expository manuscript based on Jean-Pierre Serre, Lie Algebras and Lie Groups: 1964 Harvard Lectures, Benjamin, 1965."
+references:
+  - type: book
+    title: "Lie Algebras and Lie Groups: 1964 Harvard Lectures"
+    authors:
+      - family-names: "Serre"
+        given-names: "Jean-Pierre"
+    publisher: "Benjamin"
+    year: 1965
