@@ -1,13 +1,16 @@
 # Lie's Theorem: A Structural Approach to Solvable Lie Algebras
 
-This repository contains an expository reconstruction of Lie's Theorem for finite-dimensional representations of solvable Lie algebras. Rather than presenting a new proof, the manuscript expands the classical argument of Serre into a step-by-step structural exposition that makes every major reduction and induction step explicit.
-
-The manuscript develops the structural ingredients behind the theorem - derived series, ideals, quotient representations, invariant subspaces, and complete flags - before assembling them into the final triangularization argument.
+This repository walks through Lie's Theorem for finite-dimensional representations of solvable Lie algebras. Although Serre's classical proof is elegant and compact, it compresses lots of details, so here I expands these structural ideas into self-contained, step by step exposition. The goal is to make the logic flow of Serre's proof explicit. It's meant for someone seeing Lie's Theorem for the first time, or for anyone who wants to really dig into every detail.
+The exposition starts with the basic building blocks: derived series, ideals, quotient representations, invariant subspaces, and complete flags, then it assembles them into the final triangularization argument.
 
 - **Title:** *Lie's Theorem: A Structural Approach to Solvable Lie Algebras*
 - **Author:** Xi Chen
 - **Date:** 11 November 2025
-- **File:** [`documents/math3349_project.pdf`](documents/math3349_project.pdf)
+- ## 📄 Manuscript
+
+Read the full expository manuscript here:
+
+**[Lie's Theorem: A Structural Approach to Solvable Lie Algebras](documents/math3349_project.pdf)**
 
 ## Highlights
 
@@ -141,7 +144,7 @@ The manuscript includes counterexamples showing that Lie's Theorem can fail over
 
 ## Suggested Citation
 
-If citing this exposition, please cite both the manuscript and Serre's original source.
+If you find this exposition helpful, please cite both this manuscript and Serre's original source.
 
 ```bibtex
 @misc{chen_lies_theorem_structural_2025,
