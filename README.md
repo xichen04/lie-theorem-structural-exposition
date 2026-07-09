@@ -1,98 +1,143 @@
 # Lie's Theorem: A Structural Approach to Solvable Lie Algebras
 
-This repository contains an expository manuscript on Lie's Theorem for finite-dimensional representations of solvable Lie algebras over an algebraically closed field of characteristic zero.
+This repository contains an expository reconstruction of Lie's Theorem for finite-dimensional representations of solvable Lie algebras. Rather than presenting a new proof, the manuscript expands the classical argument of Serre into a step-by-step structural exposition that makes every major reduction and induction step explicit.
 
-The manuscript is:
+The manuscript develops the structural ingredients behind the theorem - derived series, ideals, quotient representations, invariant subspaces, and complete flags - before assembling them into the final triangularization argument.
 
 - **Title:** *Lie's Theorem: A Structural Approach to Solvable Lie Algebras*
 - **Author:** Xi Chen
 - **Date:** 11 November 2025
 - **File:** [`documents/math3349_project.pdf`](documents/math3349_project.pdf)
 
-## Abstract
+## Highlights
 
-Lie's Theorem asserts that if 𝔤 is a finite-dimensional solvable Lie algebra over an algebraically closed field k of characteristic zero, and if
+- Complete proof of Lie's Theorem from first principles
+- Step-by-step reconstruction of Serre's classical proof
+- Expanded proofs of intermediate lemmas often compressed in standard texts
+- Structural development from solvability to simultaneous triangularization
+- Examples illustrating why algebraic closedness and characteristic zero are essential
+- Corollaries connecting stable flags, ideals, and nilpotence of the derived algebra
+
+## Intended Audience
+
+This manuscript is intended for:
+
+- undergraduate students learning Lie algebras;
+- beginning graduate students studying representation theory;
+- readers working through Serre's *Lie Algebras and Lie Groups*;
+- anyone who wants a fully expanded proof of Lie's Theorem.
+
+## Main Theorem
+
+Let `k` be an algebraically closed field of characteristic zero, let `g` be a solvable Lie algebra over `k`, and let
 
 ```text
-ρ: 𝔤 -> gl(V)
+rho: g -> gl(V)
 ```
 
-is a finite-dimensional representation, then V admits a complete 𝔤-stable flag. Equivalently, there exists a basis of V in which every operator ρ(x), for x in 𝔤, is upper triangular.
+be a finite-dimensional representation. Then `V` admits a complete `g`-stable flag
 
-The paper gives a detailed structural proof of this theorem. It develops the necessary language of ideals, derived series, stable subspaces, quotient representations, and complete flags before proving the theorem through the construction of a common eigenvector and an induction on the dimension of the representation space.
+```text
+0 = V_0 subset V_1 subset ... subset V_n = V,
+dim(V_i / V_{i-1}) = 1.
+```
 
-## Provenance and Expository Contribution
+Equivalently, there is a basis of `V` in which every operator `rho(x)`, for `x in g`, is upper triangular.
+
+## Proof Architecture
+
+The proof is organized around one central goal: find a common eigenvector. Once such a vector exists, it spans a stable line; the representation descends to the quotient by that line; induction on `dim(V)` then builds a complete stable flag.
+
+```mermaid
+flowchart TD
+    A["Lie's Theorem"] --> B["Find a common eigenvector"]
+    B --> C["Stable line k v"]
+    C --> D["Quotient representation V / k v"]
+    D --> E["Induction on dim(V)"]
+    E --> F["Complete stable flag"]
+    F --> G["Upper triangular representation"]
+
+    classDef step fill:#ecebff,stroke:#8b6ee8,stroke-width:1.5px,color:#2f2f38;
+    class A,B,C,D,E,F,G step;
+```
+
+The common eigenvector step has its own internal structure:
+
+```mermaid
+flowchart TD
+    A["Common eigenvector"] --> B["Character lemma for ideals"]
+    B --> C["Codimension-one ideal h in g"]
+    C --> D["Induction on dim(g)"]
+    D --> E["h-eigenvectors form a g-stable subspace"]
+    E --> F["Algebraic closedness gives an eigenvector for x in g \\ h"]
+
+    classDef step fill:#ecebff,stroke:#8b6ee8,stroke-width:1.5px,color:#2f2f38;
+    class A,B,C,D,E,F step;
+```
+
+## Key Mathematical Ideas
+
+The exposition develops Lie's Theorem through the following structural ideas:
+
+- solvability via the derived series;
+- codimension-one ideals containing the derived algebra;
+- common eigenvectors and stable lines;
+- quotient representations;
+- complete invariant flags;
+- simultaneous triangularization;
+- the character lemma and its trace argument.
+
+## Expository Contribution
 
 The proof is based principally on Jean-Pierre Serre's presentation in:
 
 > Jean-Pierre Serre, *Lie Algebras and Lie Groups: 1964 Harvard Lectures*, Benjamin, 1965.
 
-The purpose of this manuscript is not to claim a new theorem, but to provide a careful reconstruction and pedagogical expansion of Serre's proof. In particular, the manuscript reorganizes the original argument into a step-by-step exposition and fills in several intermediate steps that are compressed or left implicit in Serre's text. The resulting presentation is intended to be readable for beginners who want to understand the proof deeply, while preserving the logical precision of the classical argument.
+The purpose of this manuscript is not to claim a new theorem. Its contribution is pedagogical: it reorganizes Serre's argument into a self-contained exposition for readers who want to see exactly how the reductions, lemmas, and inductions fit together.
 
-The main expository contributions are:
+In particular, the manuscript:
 
-- isolating the reduction of Lie's Theorem to the existence of a common eigenvector;
-- making explicit the use of a codimension-one ideal in a solvable Lie algebra;
-- expanding the proof of the main character lemma, including the cyclic subspace construction and trace argument;
-- carefully explaining how the common eigenvector produces a stable line and how the quotient representation supports the induction;
-- recording the role of the field hypotheses, especially algebraic closedness and characteristic zero;
-- including examples and counterexamples that clarify the necessity of the assumptions.
+- isolates the reduction to a common eigenvector;
+- expands the codimension-one ideal construction;
+- gives a complete proof of the character lemma;
+- explains the induction through quotient representations;
+- highlights precisely where algebraic closedness and characteristic zero enter;
+- includes illustrative examples and counterexamples.
 
-## Mathematical Structure
+## Logical Flow
 
-The manuscript is organized as follows.
+The manuscript follows the same order as the mathematics:
 
-1. **Introduction.** Motivation for Lie's Theorem and its role in the structure theory of solvable Lie algebras.
-2. **Basics of Lie Algebras.** Definitions of Lie algebras, ideals, derived series, representations, stable subspaces, quotient representations, complete flags, and the adjoint representation.
-3. **Structural Tools for Lie's Theorem.** Proof that a nonzero solvable Lie algebra has a codimension-one ideal containing its derived algebra, together with supporting facts about common eigenvectors and abelian actions.
-4. **Lie's Theorem.** The main proof, including the reduction to a common eigenvector, the main lemma on characters over ideals, and the induction that constructs a complete stable flag.
-5. **Examples, Field Assumptions, and Limitations.** Positive examples over C, failure over non-algebraically closed fields, and failure in positive characteristic.
-6. **References.** Sources used in the exposition.
-7. **Appendix.** Note on the use of generative AI in preparing parts of the project.
+```mermaid
+flowchart TD
+    A["Lie algebra foundations"] --> B["Solvability and codimension-one ideals"]
+    B --> C["Common eigenvectors"]
+    C --> D["Main character lemma"]
+    D --> E["Induction on dim(g)"]
+    E --> F["Induction on dim(V)"]
+    F --> G["Complete stable flag"]
+    G --> H["Upper triangular representation"]
 
-## Main Theorem
-
-Let k be an algebraically closed field of characteristic zero, let 𝔤 be a solvable Lie algebra over k, and let ρ: 𝔤 -> gl(V) be a finite-dimensional representation. Then there exists a complete 𝔤-stable flag
-
-```text
-0 = V_0 \subset V_1 \subset \cdots \subset V_n = V,
-\qquad \dim(V_i/V_{i-1}) = 1.
+    classDef step fill:#ecebff,stroke:#8b6ee8,stroke-width:1.5px,color:#2f2f38;
+    class A,B,C,D,E,F,G,H step;
 ```
-
-Equivalently, there is a basis of V in which every ρ(x), x in 𝔤, is upper triangular.
-
-## Key Proof Strategy
-
-The proof proceeds by reducing the theorem to the existence of a common eigenvector. Once such a vector v != 0 is found, the line kv is 𝔤-stable. The representation then descends to the quotient V/kv, and induction gives a complete stable flag in the quotient. Pulling this flag back to V yields the desired complete 𝔤-stable flag.
-
-The central technical point is the following lemma. If 𝔥 is an ideal of 𝔤 and v != 0 is an 𝔥-eigenvector with character χ: 𝔥 -> k, then
-
-```text
-\chi([x,h]) = 0
-\qquad
-\text{for all } x \in \mathfrak g,\ h \in \mathfrak h.
-```
-
-This lemma is proved by constructing a finite cyclic subspace generated by repeated applications of ρ(x), showing that ρ(h) acts upper triangularly on it with constant diagonal character χ(h), and then applying the trace identity Tr([A,B]) = 0. The characteristic-zero assumption is essential at precisely this point.
 
 ## Field Hypotheses
 
-The assumptions on the base field are not cosmetic.
+The assumptions on the base field are essential.
 
-- Algebraic closedness is used to guarantee the existence of eigenvectors for linear operators on nonzero finite-dimensional invariant subspaces.
-- Characteristic zero is used in the trace argument, where one concludes from nχ([x,h]) = 0 that χ([x,h]) = 0.
+- Algebraic closedness is used to guarantee eigenvectors for linear operators on nonzero finite-dimensional invariant subspaces.
+- Characteristic zero is used in the trace argument in the main character lemma, where the proof concludes from `n chi([x,h]) = 0` that `chi([x,h]) = 0`.
 
-The manuscript includes counterexamples showing that Lie's Theorem can fail over R and in positive characteristic.
+The manuscript includes counterexamples showing that Lie's Theorem can fail over `R` and in positive characteristic.
 
-## Repository Contents
+## Repository
 
-```text
-.
-├── README.md
-├── CITATION.cff
-└── documents
-    └── math3349_project.pdf
-```
+| File | Description |
+| --- | --- |
+| `README.md` | Repository overview |
+| `documents/math3349_project.pdf` | Full expository manuscript on Lie's Theorem |
+| `CITATION.cff` | Citation metadata |
 
 ## Suggested Citation
 
